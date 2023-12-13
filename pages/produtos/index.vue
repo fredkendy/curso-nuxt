@@ -5,6 +5,10 @@
         <NuxtLink to="/produtos/produto-a">Produto A | </NuxtLink>
         <NuxtLink to="/produtos/produto-b">Produto B | </NuxtLink>
         <NuxtLink to="/produtos/produto-c">Produto C</NuxtLink>
+
+        <div v-for="product in products" :key="product.id" class="border-b border-grey py-3">
+            {{ product.title }}
+        </div>
     </div>
 </template>
 
@@ -16,8 +20,16 @@ export default {
 
         }
     },
-    methods: {
-
+    
+    //asyncData: roda no lado do cliente e servidor. Executado antes do componente ser executado (sem acesso ao this)
+    //fazer conexões ajax, via server-side e qdo troca de rotas
+    //tudo que retornar, é mesclado com o data()
+    //tbm recebe o context (como nos middlewares) e dentro tem a propriedade axios
+    async asyncData({ $axios }) {
+        const products = await $axios.$get('https://jsonplaceholder.typicode.com/posts?_limit=3')
+        return {
+            products
+        }
     }
 }
 </script>

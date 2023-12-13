@@ -5,8 +5,8 @@
 export default ({ redirect }) => {
     //console.log(context)
 
-    //simulando um usuario logado ou nao
-    const loggedIn = false;
+    //simulando um usuario logado. se nao estiver, manda pra raiz 
+    const loggedIn = true;
     if (!loggedIn) {
         return redirect('/');
     }

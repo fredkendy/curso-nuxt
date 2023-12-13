@@ -12,6 +12,24 @@
 
         <br><br>
 
+        <pre>
+            <!-- atributos: pending, error, timestamp -->
+            <!-- {{ $fetchState }} -->
+        </pre> 
+
+        <div v-if="$fetchState.pending">
+            Carregando...
+        </div>
+
+        <div v-else>
+            <div v-for="service in services" :key="service.id" class="border-b border-grey-400 py-4">
+                {{ service.username }}
+            </div>
+        </div>
+
+        <br><br>
+        
+
         <!-- AQUI VAI RENDERIZAR A ROTA FILHO -->
         <NuxtChild />
     </div>
@@ -22,11 +40,14 @@ export default {
     name: '',
     data() {
         return {
-
+            services: []
         }
     },
-    methods: {
-
+    
+    //executado dps que o componente foi criado (tem acesso ao this, mas n tem ao context). busca apenas dps de carregar o componente
+    //diferentemente do asyncData, não é mesclado com data(), precisa atribuir a sua rotina de código
+    async fetch() {
+        this.services = await this.$axios.$get('https://jsonplaceholder.typicode.com/users?_limit=3')
     }
 }
 </script>

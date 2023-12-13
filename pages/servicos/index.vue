@@ -14,8 +14,10 @@ export default {
 
         }
     },
-    methods: {
-
+    //PLUGINS
+    mounted() {
+        console.log(this.$name('Fred'))
+        console.log(this.$dayjs().format())
     }
 }
 </script>

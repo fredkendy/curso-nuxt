@@ -29,6 +29,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    //@ é um alias para a raiz do projeto
+    '@/plugins/my-plugin',
+    '@/plugins/dayjs',
+    '@/plugins/vtooltip'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

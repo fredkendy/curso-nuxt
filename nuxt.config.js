@@ -3,12 +3,13 @@ export default {
   head: {
     title: 'meuapp',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'pt-br'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      //hid serve como identificador
+      { hid: 'description', name: 'description', content: 'Minha descrição' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [

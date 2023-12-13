@@ -48,6 +48,21 @@ export default {
     //diferentemente do asyncData, não é mesclado com data(), precisa atribuir a sua rotina de código
     async fetch() {
         this.services = await this.$axios.$get('https://jsonplaceholder.typicode.com/users?_limit=3')
+    },
+
+    //SEO
+    head() {
+        return {
+            title: 'Serviços',
+            meta: [
+                //hid vai substituir a metatag declarada no nuxt.config.js, ao invés de duplicar
+                { hid: 'description', name: 'description', content: 'Minha descrição do serviço' }
+            ],
+            //pode tb colocar atributos html
+            bodyAttrs: {
+                class: 'bg-grey-400'
+            }
+        }
     }
 }
 </script>

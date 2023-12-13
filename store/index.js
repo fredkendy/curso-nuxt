@@ -1,0 +1,1 @@
+//Criando este arquivo, já "instala" o vuex

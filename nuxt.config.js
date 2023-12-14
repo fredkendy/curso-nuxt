@@ -17,6 +17,15 @@ export default {
     ]
   },
 
+  //Variáveis que estarão expostas no front-end
+  publicRuntimeConfig: {
+    youtube_api_key: process.env.YOUTUBE_API_KEY
+  },
+  //Variáveis sensíveis, apenas disponíveis no server-side
+  privateRuntimeConfig: {
+    facebook_api_key: process.env.FACEBOOK_API_KEY
+  },
+
   //MIDDLEWARE QUE VAI SER APLICADO A TODAS AS ROTAS
   //Se tiver vários, colocar dentro de array []
   // router: {

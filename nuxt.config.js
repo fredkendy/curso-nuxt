@@ -52,7 +52,8 @@ export default {
     //@ é um alias para a raiz do projeto
     '@/plugins/my-plugin',
     '@/plugins/dayjs',
-    '@/plugins/vtooltip'
+    '@/plugins/vtooltip',
+    '@/plugins/axios'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

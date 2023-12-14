@@ -47,7 +47,7 @@ export default {
     //executado dps que o componente foi criado (tem acesso ao this, mas n tem ao context). busca apenas dps de carregar o componente
     //diferentemente do asyncData, não é mesclado com data(), precisa atribuir a sua rotina de código
     async fetch() {
-        this.services = await this.$axios.$get('https://jsonplaceholder.typicode.com/users?_limit=3')
+        this.services = await this.$axios.$get('users?_limit=3')
     },
 
     //SEO

@@ -1,4 +1,15 @@
 export default {
+  //O primeiro npm run dev gera o arquivo .nuxt (arquivos para desenvolvimento)
+  //NO SERVIDOR:
+  //o comando build serve para produção ('fazer o build' -> minificacao, etc)
+  //dps, comando start sobe a aplicacao (n refletirá as alterações)
+
+  //Por padrão o target é 'server', para utilizar ssr, node...
+  //Para projeto estático, colocar static (html...)
+  //O comando é diferente: 'generate' -> tranforma o projeto em html (cria rotas, colocar ajax no html...)
+  //Gera dist -> html (tudo estático, sem ajax etc) 
+  target: 'static',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'meuapp',
